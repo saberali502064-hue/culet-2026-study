@@ -1,0 +1,1247 @@
+    <!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CULET 2026 Study Website</title>
+
+<style>index.html
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #222;
+}
+
+header {
+    background: #173b8f;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+header p {
+    margin-bottom: 0;
+}
+
+nav {
+    background: #111827;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 12px;
+    margin: 2px;
+    border-radius: 6px;
+}
+
+nav a:hover {
+    background: #2563eb;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 18px;
+}
+
+.card,
+.syllabus-card,
+.quiz-box,
+.result-box {
+    background: white;
+    padding: 22px;
+    margin: 18px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+h2 {
+    text-align: center;
+    color: #173b8f;
+}
+
+h3 {
+    color: #173b8f;
+}
+
+.hero {
+    text-align: center;
+}
+
+.hero button {
+    background: #16a34a;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-size: 17px;
+}
+
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.subject-btn {
+    border: none;
+    color: white;
+    background: #173b8f;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.subject-btn:hover {
+    background: #2563eb;
+}
+
+.syllabus-card ul {
+    line-height: 1.9;
+}
+
+.syllabus-card li {
+    margin-bottom: 5px;
+}
+
+.question-number {
+    color: #666;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.option {
+    display: block;
+    background: #f3f4f6;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: #dbeafe;
+}
+
+.option input {
+    margin-right: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 7px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#previousBtn {
+    background: #6b7280;
+}
+
+#nextBtn {
+    background: #173b8f;
+}
+
+#submitBtn {
+    background: #16a34a;
+}
+
+#restartBtn {
+    background: #dc2626;
+}
+
+#backBtn {
+    background: #6b7280;
+    margin-top: 10px;
+}
+
+button:disabled {
+    background: #cbd5e1 !important;
+}
+
+.result-box {
+    text-align: center;
+    display: none;
+}
+
+.score {
+    font-size: 30px;
+    font-weight: bold;
+    color: #16a34a;
+}
+
+.percentage {
+    font-size: 22px;
+    margin: 10px;
+}
+
+footer {
+    background: #111827;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+
+    .buttons {
+        flex-wrap: wrap;
+    }
+
+    button {
+        flex: 1;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <h1>📚 CULET 2026 Study Website</h1>
+
+    <p>
+        Syllabus • Notes • MCQ • Mock Test • Spoken English
+    </p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="#home">Home</a>
+
+    <a href="#syllabus">Syllabus</a>
+
+    <a href="#subjects">MCQ</a>
+
+    <a href="#english">Spoken English</a>
+
+    <a href="#about">About</a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- HOME -->
+
+<section id="home" class="card hero">
+
+    <h2>🎓 CULET 2026 Preparation</h2>
+
+    <p>
+        CULET প্রস্তুতির জন্য Syllabus, Subject-wise
+        MCQ এবং Practice Test।
+    </p>
+
+    <button
+    onclick="document.getElementById('syllabus').scrollIntoView({behavior:'smooth'})">
+        📚 Syllabus দেখুন
+    </button>
+
+</section>
+
+
+
+<!-- COMPLETE SYLLABUS -->
+
+<section id="syllabus">
+
+    <h2>📚 CULET 2026 Complete Syllabus</h2>
+
+
+    <!-- LEGAL -->
+
+    <div class="syllabus-card">
+
+        <h3>⚖️ 1. Legal Aptitude / Legal Reasoning</h3>
+
+        <p>
+            আইন ও Legal Reasoning-এর মৌলিক ধারণা।
+        </p>
+
+        <ul>
+
+            <li>Law and Legal Terms</li>
+
+            <li>Legal Maxims</li>
+
+            <li>Legal Principles</li>
+
+            <li>Legal Reasoning</li>
+
+            <li>Constitution of India – Basic Knowledge</li>
+
+            <li>Fundamental Rights</li>
+
+            <li>Fundamental Duties</li>
+
+            <li>Directive Principles of State Policy</li>
+
+            <li>Union and State Government</li>
+
+            <li>Judiciary and Courts</li>
+
+            <li>Supreme Court and High Courts</li>
+
+            <li>Contract – Basic Concepts</li>
+
+            <li>Offer and Acceptance</li>
+
+            <li>Consideration</li>
+
+            <li>Agreement and Contract</li>
+
+            <li>General Legal Awareness</li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- GK -->
+
+    <div class="syllabus-card">
+
+        <h3>🌍 2. General Knowledge & Current Affairs</h3>
+
+        <p>
+            ভারত ও বিশ্বের গুরুত্বপূর্ণ সাধারণ জ্ঞান।
+        </p>
+
+        <ul>
+
+            <li>Indian History</li>
+
+            <li>Indian Geography</li>
+
+            <li>Indian Polity</li>
+
+            <li>Indian Constitution</li>
+
+            <li>Indian Economy – Basic Knowledge</li>
+
+            <li>General Science</li>
+
+            <li>Important National Events</li>
+
+            <li>Important International Events</li>
+
+            <li>Important Personalities</li>
+
+            <li>Awards and Honours</li>
+
+            <li>Books and Authors</li>
+
+            <li>Sports</li>
+
+            <li>Important Days</li>
+
+            <li>National Symbols</li>
+
+            <li>Current Affairs</li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- REASONING -->
+
+    <div class="syllabus-card">
+
+        <h3>🧠 3. Logical / Analytical Reasoning</h3>
+
+        <p>
+            যুক্তি ও বিশ্লেষণ ক্ষমতা যাচাই করার
+            জন্য গুরুত্বপূর্ণ বিষয়।
+        </p>
+
+        <ul>
+
+            <li>Number Series</li>
+
+            <li>Alphabet Series</li>
+
+            <li>Analogy</li>
+
+            <li>Classification</li>
+
+            <li>Coding-Decoding</li>
+
+            <li>Blood Relations</li>
+
+            <li>Direction Sense</li>
+
+            <li>Logical Sequence</li>
+
+            <li>Statement and Conclusion</li>
+
+            <li>Cause and Effect</li>
+
+            <li>Odd One Out</li>
+
+            <li>Basic Analytical Reasoning</li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- ENGLISH -->
+
+    <div class="syllabus-card">
+
+        <h3>📖 4. English Language</h3>
+
+        <p>
+            English language-এর vocabulary,
+            grammar এবং comprehension-এর প্রস্তুতি।
+        </p>
+
+        <ul>
+
+            <li>Reading Comprehension</li>
+
+            <li>Vocabulary</li>
+
+            <li>Synonyms</li>
+
+            <li>Antonyms</li>
+
+            <li>Idioms and Phrases</li>
+
+            <li>One Word Substitution</li>
+
+            <li>Parts of Speech</li>
+
+            <li>Noun</li>
+
+            <li>Pronoun</li>
+
+            <li>Verb</li>
+
+            <li>Adjective</li>
+
+            <li>Adverb</li>
+
+            <li>Preposition</li>
+
+            <li>Conjunction</li>
+
+            <li>Tenses</li>
+
+            <li>Subject-Verb Agreement</li>
+
+            <li>Articles</li>
+
+            <li>Sentence Correction</li>
+
+            <li>Error Detection</li>
+
+            <li>Fill in the Blanks</li>
+
+        </ul>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- SUBJECTS -->
+
+<section id="subjects">
+
+    <h2>📝 Subject-wise MCQ</h2>
+
+    <div class="subject-grid">
+
+        <button class="subject-btn"
+        onclick="startQuiz('legal')">
+            ⚖️ Legal Aptitude
+        </button>
+
+        <button class="subject-btn"
+        onclick="startQuiz('gk')">
+            🌍 General Knowledge
+        </button>
+
+        <button class="subject-btn"
+        onclick="startQuiz('reasoning')">
+            🧠 Reasoning
+        </button>
+
+        <button class="subject-btn"
+        onclick="startQuiz('english')">
+            📖 English
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- QUIZ -->
+
+<section id="quizSection" style="display:none;">
+
+    <h2 id="subjectTitle"></h2>
+
+    <div class="quiz-box">
+
+        <div id="questionNumber"
+        class="question-number">
+        </div>
+
+        <p id="question"
+        class="question">
+        </p>
+
+        <div id="options"></div>
+
+
+        <div class="buttons">
+
+            <button id="previousBtn"
+            onclick="previousQuestion()">
+                ◀ Previous
+            </button>
+
+            <button id="nextBtn"
+            onclick="nextQuestion()">
+                Next ▶
+            </button>
+
+            <button id="submitBtn"
+            onclick="submitQuiz()"
+            style="display:none;">
+                Submit
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RESULT -->
+
+    <div id="resultBox"
+    class="result-box">
+
+        <h2>🎯 Quiz Result</h2>
+
+        <div id="score"
+        class="score">
+        </div>
+
+        <div id="percentage"
+        class="percentage">
+        </div>
+
+        <p id="message"></p>
+
+        <button id="restartBtn"
+        onclick="restartQuiz()">
+            🔄 আবার পরীক্ষা দিন
+        </button>
+
+        <br>
+
+        <button id="backBtn"
+        onclick="backToSubjects()">
+            📚 Subject নির্বাচন
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- SPOKEN ENGLISH -->
+
+<section id="english">
+
+    <h2>🗣️ Spoken English</h2>
+
+    <div class="card">
+
+        <h3>I am learning English.</h3>
+
+        <p>
+            বাংলা: আমি ইংরেজি শিখছি।
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>What are you doing?</h3>
+
+        <p>
+            বাংলা: তুমি কী করছ?
+        </p>
+
+    </div>
+
+
+    <div class="card">
+
+        <h3>Where are you going?</h3>
+
+        <p>
+            বাংলা: তুমি কোথায় যাচ্ছ?
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2>ℹ️ About</h2>
+
+    <div class="card">
+
+        <p>
+            এই Website CULET 2026 প্রস্তুতি,
+            MCQ Practice এবং Spoken English শেখার
+            জন্য তৈরি করা হয়েছে।
+        </p>
+
+    </div>
+
+</section>
+
+
+</div>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 CULET 2026 Study Website
+    </p>
+
+    <p>
+        Study • Practice • Improve
+    </p>
+
+</footer>
+
+
+
+<script>
+
+
+/* ==========================================
+   QUESTION DATABASE
+   ========================================== */
+
+const questionData = {
+
+
+legal: [
+
+{
+question:"Contract-এর বাংলা অর্থ কী?",
+options:["অধিকার","চুক্তি","বিচার","আদালত"],
+answer:1
+},
+
+{
+question:"Accept শব্দটির অর্থ কী?",
+options:["গ্রহণ করা","প্রত্যাখ্যান করা","জিজ্ঞাসা করা","লেখা"],
+answer:0
+},
+
+{
+question:"Judge-এর বাংলা অর্থ কী?",
+options:["আইনজীবী","বিচারক","সাক্ষী","আবেদনকারী"],
+answer:1
+},
+
+{
+question:"Lawyer-এর বাংলা অর্থ কী?",
+options:["বিচারক","আইনজীবী","সাক্ষী","পুলিশ"],
+answer:1
+},
+
+{
+question:"Agreement বলতে কী বোঝায়?",
+options:["সম্মতি বা চুক্তি","অপরাধ","শাস্তি","আদালত"],
+answer:0
+}
+
+],
+
+
+gk: [
+
+{
+question:"ভারতের সংবিধান কবে গৃহীত হয়?",
+options:[
+"15 August 1947",
+"26 November 1949",
+"26 January 1950",
+"2 October 1950"
+],
+answer:1
+},
+
+{
+question:"ভারতের সংবিধান কার্যকর হয় কবে?",
+options:[
+"15 August 1947",
+"26 November 1949",
+"26 January 1950",
+"2 October 1950"
+],
+answer:2
+},
+
+{
+question:"ভারতের সর্বোচ্চ আদালত কোনটি?",
+options:[
+"High Court",
+"District Court",
+"Supreme Court",
+"Sessions Court"
+],
+answer:2
+},
+
+{
+question:"ভারতের প্রজাতন্ত্র দিবস কবে?",
+options:[
+"15 August",
+"26 November",
+"26 January",
+"2 October"
+],
+answer:2
+},
+
+{
+question:"ভারতের স্বাধীনতা দিবস কবে?",
+options:[
+"15 August",
+"26 January",
+"26 November",
+"2 October"
+],
+answer:0
+}
+
+],
+
+
+reasoning: [
+
+{
+question:"2, 4, 6, 8, ? — পরের সংখ্যা কত?",
+options:["9","10","11","12"],
+answer:1
+},
+
+{
+question:"5, 10, 15, 20, ? — পরের সংখ্যা কত?",
+options:["21","23","25","30"],
+answer:2
+},
+
+{
+question:"যদি A = 1 এবং B = 2 হয়, তাহলে C = কত?",
+options:["2","3","4","5"],
+answer:1
+},
+
+{
+question:"Book : Read :: Food : ?",
+options:["Write","Eat","Sleep","Run"],
+answer:1
+},
+
+{
+question:"এক সপ্তাহে কত দিন?",
+options:["5","6","7","8"],
+answer:2
+}
+
+],
+
+
+english: [
+
+{
+question:"Choose the correct sentence.",
+options:[
+"He are a student.",
+"He is a student.",
+"He am a student.",
+"He be a student."
+],
+answer:1
+},
+
+{
+question:"What is the opposite of 'Big'?",
+options:[
+"Large",
+"Small",
+"Great",
+"High"
+],
+answer:1
+},
+
+{
+question:"What is the synonym of 'Happy'?",
+options:[
+"Sad",
+"Angry",
+"Glad",
+"Bad"
+],
+answer:2
+},
+
+{
+question:"I ___ a student.",
+options:["am","is","are","be"],
+answer:0
+},
+
+{
+question:"They ___ playing football.",
+options:["is","am","are","be"],
+answer:2
+}
+
+]
+
+};
+
+
+
+/* ==========================================
+   QUIZ VARIABLES
+   ========================================== */
+
+let currentSubject = "";
+
+let questions = [];
+
+let currentQuestion = 0;
+
+let userAnswers = [];
+
+
+
+/* ==========================================
+   START QUIZ
+   ========================================== */
+
+function startQuiz(subject) {
+
+    currentSubject = subject;
+
+    questions = questionData[subject];
+
+    currentQuestion = 0;
+
+    userAnswers =
+    new Array(questions.length).fill(null);
+
+
+    let titles = {
+
+        legal:"⚖️ Legal Aptitude",
+
+        gk:"🌍 General Knowledge",
+
+        reasoning:"🧠 Reasoning",
+
+        english:"📖 English"
+
+    };
+
+
+    document.getElementById("subjectTitle")
+    .innerText = titles[subject];
+
+
+    document.getElementById("quizSection")
+    .style.display = "block";
+
+
+    document.getElementById("resultBox")
+    .style.display = "none";
+
+
+    document.querySelector(".quiz-box")
+    .style.display = "block";
+
+
+    showQuestion();
+
+
+    document.getElementById("quizSection")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* ==========================================
+   SHOW QUESTION
+   ========================================== */
+
+function showQuestion() {
+
+    let q = questions[currentQuestion];
+
+
+    document.getElementById("questionNumber")
+    .innerText =
+    "প্রশ্ন " +
+    (currentQuestion + 1) +
+    " / " +
+    questions.length;
+
+
+    document.getElementById("question")
+    .innerText = q.question;
+
+
+    let html = "";
+
+
+    q.options.forEach(function(option,index) {
+
+        let checked = "";
+
+        if(userAnswers[currentQuestion] === index) {
+
+            checked = "checked";
+
+        }
+
+
+        html +=
+
+        '<label class="option">' +
+
+        '<input type="radio"' +
+
+        ' name="answer"' +
+
+        ' value="' + index + '"' +
+
+        ' ' + checked +
+
+        ' onchange="saveAnswer(' +
+        index +
+        ')">' +
+
+        option +
+
+        '</label>';
+
+    });
+
+
+    document.getElementById("options")
+    .innerHTML = html;
+
+
+    document.getElementById("previousBtn")
+    .disabled =
+    currentQuestion === 0;
+
+
+    if(currentQuestion === questions.length - 1) {
+
+        document.getElementById("nextBtn")
+        .style.display = "none";
+
+        document.getElementById("submitBtn")
+        .style.display = "block";
+
+    }
+
+    else {
+
+        document.getElementById("nextBtn")
+        .style.display = "block";
+
+        document.getElementById("submitBtn")
+        .style.display = "none";
+
+    }
+
+}
+
+
+
+/* ==========================================
+   SAVE ANSWER
+   ========================================== */
+
+function saveAnswer(index) {
+
+    userAnswers[currentQuestion] = index;
+
+}
+
+
+
+/* ==========================================
+   NEXT
+   ========================================== */
+
+function nextQuestion() {
+
+    if(currentQuestion < questions.length - 1) {
+
+        currentQuestion++;
+
+        showQuestion();
+
+    }
+
+}
+
+
+
+/* ==========================================
+   PREVIOUS
+   ========================================== */
+
+function previousQuestion() {
+
+    if(currentQuestion > 0) {
+
+        currentQuestion--;
+
+        showQuestion();
+
+    }
+
+}
+
+
+
+/* ==========================================
+   SUBMIT
+   ========================================== */
+
+function submitQuiz() {
+
+    let score = 0;
+
+
+    questions.forEach(function(q,index) {
+
+        if(userAnswers[index] === q.answer) {
+
+            score++;
+
+        }
+
+    });
+
+
+    let percentage =
+    Math.round(
+        (score / questions.length) * 100
+    );
+
+
+    document.getElementById("score")
+    .innerText =
+    "Score: " +
+    score +
+    " / " +
+    questions.length;
+
+
+    document.getElementById("percentage")
+    .innerText =
+    "Percentage: " +
+    percentage +
+    "%";
+
+
+    let message;
+
+
+    if(percentage >= 80) {
+
+        message =
+        "🎉 অসাধারণ! আপনার প্রস্তুতি খুব ভালো।";
+
+    }
+
+    else if(percentage >= 50) {
+
+        message =
+        "👍 ভালো। আরও Practice করুন।";
+
+    }
+
+    else {
+
+        message =
+        "📚 আরও বেশি Practice করুন।";
+
+    }
+
+
+    document.getElementById("message")
+    .innerText = message;
+
+
+    document.getElementById("resultBox")
+    .style.display = "block";
+
+
+    document.querySelector(".quiz-box")
+    .style.display = "none";
+
+
+    document.getElementById("resultBox")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+
+/* ==========================================
+   RESTART
+   ========================================== */
+
+function restartQuiz() {
+
+    currentQuestion = 0;
+
+    userAnswers =
+    new Array(questions.length).fill(null);
+
+
+    document.getElementById("resultBox")
+    .style.display = "none";
+
+
+    document.querySelector(".quiz-box")
+    .style.display = "block";
+
+
+    showQuestion();
+
+}
+
+
+
+/* ==========================================
+   BACK TO SUBJECTS
+   ========================================== */
+
+function backToSubjects() {
+
+    document.getElementById("quizSection")
+    .style.display = "none";
+
+
+    document.getElementById("subjects")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
